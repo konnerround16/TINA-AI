@@ -1,0 +1,10 @@
+{
+  "name": "AI Web App",
+  "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9",
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-toolsai.jupyter"
+  ],
+  "postCreateCommand": "pip install -r requirements.txt"
+}

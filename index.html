@@ -1,0 +1,25 @@
+<html>
+<head><title>AI Web App</title></head>
+<body>
+    <h1>TINA AI</h1>
+    <input type="text" id="inputData" />
+    <button onclick="predict()">Predict</button>
+
+    <script>
+        function predict() {
+            const inputData = document.getElementById('inputData').value;
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ input_data: inputData })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.prediction);
+            });
+        }
+    </script>
+</body>
+</html>
